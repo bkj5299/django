@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <title>users</title>
+  </head>
+  <body>
+    {% csrf_token %}
+    <div class="container jumbotron">
+      <h1><i>Welcome</i></h1>
+      <h1>here are users</h1>
+    </div>
+    <div class="container">
+    {% if user_list %}
+    <ol>
+      {% for person in user_list%}
+      <li>
+        user info
+      </li>
+      <ul>
+        <li>first_name:{{person.first_name}}</li>
+        <li>
+          last_name:{{person.last_name}}
+        </li>
+        <li>
+          email:{{person.email}}
+        </li>
+      </ul>
+      {% endfor %}
+    </ol>
+    {% endif %}
+    </div>
+  </body>
+</html>

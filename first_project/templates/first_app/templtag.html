@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+
+  {% extends "first_app/base.html"%}
+
+  {% block body_block %}
+  <div class="container jumbotron">
+    <a href="{% url 'first_app:help' %}">this is next page</a><br />
+    <a href="{% url 'admin:index' %}">admin</a>
+    <a href="{% url 'first_app:index' %}">this is next page</a><br />
+  </div>
+
+    {% endblock %}

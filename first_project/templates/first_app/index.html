@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% extends "first_app/base.html"%}
+     {% block body_block %}
+     {% load static%}
+       <div class='container'>
+
+         <h1>she is beautiful!</h1>
+
+         <img class=" img-responsive " src="{% static "images/rash3.jpg" %}" alt="" />
+         <img class=" img-responsive " src="{% static "images/rash2.jpg" %}" alt="" />
+
+         <div class="jumbotron">
+           <p>
+             this is it
+           </p>
+           {% if access_records%}
+           <table>
+             <thead>
+               <th>
+                 site name
+               </th>
+               <th>
+                 date Accessed
+               </th>
+             </thead>
+             {% for i in access_records%}
+             <tr>
+               <td>
+                 {{i.name}}
+               </td>
+               <td>
+               {{ i.date}}
+               </td>
+
+
+             </tr>
+             {%endfor%}
+           </table>
+           {%else%}
+           <p>
+             no access records
+           </p>
+           {%endif%}
+         </div>
+         </div>
+
+    {% endblock %}
